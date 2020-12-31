@@ -96,6 +96,7 @@ public class ArrayDeque<T> {
         if (size > 0) {
             T last = array[nextLast - 1];
             size--;
+            nextLast --;
             return last;
         } else {
             return null;

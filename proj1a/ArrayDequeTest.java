@@ -25,9 +25,25 @@ public class ArrayDequeTest {
         ArrayDeque.addFirst(9);
     }
 
+    public static void addLastremoveTest() {
+        ArrayDeque<Integer> ArrayDeque = new ArrayDeque<>();
+        ArrayDeque.addLast(0);
+        ArrayDeque.removeLast();//      ==> 0
+        ArrayDeque.addLast(2);
+        ArrayDeque.isEmpty();
+        ArrayDeque.addLast(4);
+        ArrayDeque.addLast(5);
+        ArrayDeque.addLast(6);
+        ArrayDeque.addLast(7);
+        ArrayDeque.addLast(8);
+        ArrayDeque.addLast(9);
+        ArrayDeque.addLast(10);
+        ArrayDeque.addLast(11);
+    }
 
     public static void main(String[] args) {
 //        addFirstTest();
-        addFirstEmptyTest();
+//        addFirstEmptyTest();
+        addLastremoveTest();
     }
 }
