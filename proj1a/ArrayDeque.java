@@ -30,7 +30,7 @@ public class ArrayDeque<T> {
         } else {
             nextFirst--;
         }
-        size ++;
+        size++;
         // if < 0?
     }
 
