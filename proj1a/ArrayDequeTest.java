@@ -11,7 +11,23 @@ public class ArrayDequeTest {
         a.printDeque();
     }
 
+    public static void addFirstEmptyTest() {
+        ArrayDeque<Integer> ArrayDeque = new ArrayDeque<>();
+        ArrayDeque.addFirst(0);
+        ArrayDeque.addFirst(1);
+        ArrayDeque.addFirst(2);
+        ArrayDeque.addFirst(3);
+        ArrayDeque.addFirst(4);
+        ArrayDeque.addFirst(5);
+        ArrayDeque.isEmpty();
+        ArrayDeque.addFirst(7);
+        ArrayDeque.addFirst(8);
+        ArrayDeque.addFirst(9);
+    }
+
+
     public static void main(String[] args) {
-        addFirstTest();
+//        addFirstTest();
+        addFirstEmptyTest();
     }
 }
