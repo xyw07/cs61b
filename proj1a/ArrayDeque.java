@@ -24,11 +24,12 @@ public class ArrayDeque<T> {
         if (size == array.length) {
             resize(2 * size);
         }
+        array[nextFirst] = item;
         if (nextFirst == 0) {
             nextFirst = array.length - 1;
+        } else {
+            nextFirst--;
         }
-        array[nextFirst] = item;
-        nextFirst--;
         size ++;
         // if < 0?
     }
@@ -37,11 +38,12 @@ public class ArrayDeque<T> {
         if (size == array.length) {
             resize(2 * size);
         }
+        array[nextLast] = item;
         if (nextLast == array.length - 1) {
             nextLast = 0;
+        } else {
+            nextLast++;
         }
-        array[nextLast] = item;
-        nextLast++;
         size++;
     }
 
@@ -54,14 +56,14 @@ public class ArrayDeque<T> {
     }
 
     public void printDeque() {
-        for (int i = 0; i < size; i++) {
-            System.out.print(array[i]);
+        for (int i = nextFirst + 1; i < nextLast; i++) {
+            System.out.print(array[i] + " ");
         }
     }
 
     public T removeFirst() {
         if (size > 0) {
-            double usage = size/array.length;
+            double usage = 1.0 * size / array.length;
             if (usage < 0.25) {
                 resize(2 * size);
             }
@@ -86,6 +88,6 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        return array[index];
+        return array[nextFirst + index + 1];
     }
 }

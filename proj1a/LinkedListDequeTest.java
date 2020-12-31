@@ -82,7 +82,7 @@ public class LinkedListDequeTest {
 
 	public static void getRecursiveTest() {
 		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 16; i++) {
 			lld1.addFirst(i);
 		}
 		 int a = lld1.getRecursive(3);
