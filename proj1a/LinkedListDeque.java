@@ -80,6 +80,7 @@ public class LinkedListDeque<T> {
             IntNode remain = sentinel.prev.prev;
             remain.next = sentinel;
             sentinel.prev = remain;
+            size --;
             return last;
         } else {
             return null;

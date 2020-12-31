@@ -79,7 +79,7 @@ public class ArrayDeque<T> {
 
     public T removeLast() {
         if (size > 0) {
-            T last = array[size - 1];
+            T last = array[nextLast - 1];
             size--;
             return last;
         } else {
