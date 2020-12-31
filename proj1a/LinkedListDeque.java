@@ -30,7 +30,7 @@ public class LinkedListDeque<T> {
         IntNode remain = this.sentinel.next;
         IntNode a = new IntNode(item, sentinel, sentinel.next);
         this.sentinel.next = a;
-        remain.prev = a.next;
+        remain.prev = a;
         if (this.sentinel.prev == this.sentinel) {
             this.sentinel.prev = a;
         }

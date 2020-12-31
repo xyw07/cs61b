@@ -92,17 +92,39 @@ public class LinkedListDequeTest {
 	public static void addLastremoveLastTest() {
 		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
 		lld1.isEmpty();
-		lld1.addLast(1);
-		int a = lld1.removeLast();
-		System.out.println("a = " + a);
+		for(int i = 0; i < 16; i++) {
+			lld1.addLast(i);
+		}
+		for(int i = 0; i < 16; i++) {
+			int a = lld1.removeLast();
+			System.out.println("a = " + a);
+		}
 		boolean t = lld1.isEmpty();
 		System.out.println("true? =" + t);
+	}
+
+	public static void test(){
+		LinkedListDeque<Integer> LinkedListDeque = new LinkedListDeque<Integer>();
+		LinkedListDeque.addFirst(2);
+		LinkedListDeque.removeLast();
+		LinkedListDeque.addFirst(5);
+		LinkedListDeque.addFirst(6);
+		LinkedListDeque.removeLast(); //      ==> 5
+		LinkedListDeque.getRecursive(0);
+		LinkedListDeque.removeFirst(); //     ==> 6
+		LinkedListDeque.addFirst(10);
+		LinkedListDeque.removeFirst(); //     ==> 10
+		LinkedListDeque.addFirst(12);
+		LinkedListDeque.getRecursive(0);
+		int a = LinkedListDeque.removeLast();
+		System.out.println(a);
 	}
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
 //		addIsEmptySizeTest();
 //		addRemoveTest();
 //		getRecursiveTest();
-		addLastremoveLastTest();
+//		addLastremoveLastTest();
+		test();
 	}
 } 
