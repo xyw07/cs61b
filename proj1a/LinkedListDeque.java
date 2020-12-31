@@ -85,4 +85,15 @@ public class LinkedListDeque<T> {
         }
         return curr.item;
     }
+
+    public T getRecursive(int index) {
+        return helper(sentinel.next, index, 0);
+    }
+
+    private  T helper(IntNode n, int index, int level) {
+        if (level == index) {
+            return n.item;
+        }
+        return helper(n.next, index, level + 1);
+    }
 }

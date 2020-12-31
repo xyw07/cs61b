@@ -80,9 +80,19 @@ public class LinkedListDequeTest {
 		printTestStatus(passed);
 	}
 
+	public static void getRecursiveTest() {
+		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
+		for(int i = 0; i < 5; i++) {
+			lld1.addFirst(i);
+		}
+		 int a = lld1.getRecursive(3);
+		System.out.println("index 3 =" + a);
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
-		addIsEmptySizeTest();
-		addRemoveTest();
+//		addIsEmptySizeTest();
+//		addRemoveTest();
+		getRecursiveTest();
 	}
 } 
