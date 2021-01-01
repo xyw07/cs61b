@@ -71,6 +71,7 @@ public class ArrayDeque<T> {
     }
 
     public void printDeque() {
+        // prob: if nextFirst = length -1
         for (int i = nextFirst + 1; i < nextLast; i++) {
             System.out.print(array[i] + " ");
         }
@@ -82,9 +83,16 @@ public class ArrayDeque<T> {
             if (usage < 0.25) {
                 resize(2 * size);
             }
-            T first = array[nextFirst + 1];
-            array[nextFirst + 1] = null;
-            nextFirst++;
+            int firstIndex;
+            // prob: if nextFirst = length -1
+            if (nextFirst == array.length - 1) {
+                firstIndex = 0;
+            } else {
+                firstIndex = nextFirst + 1;
+            }
+            T first = array[firstIndex];
+            array[firstIndex] = null;
+            nextFirst = firstIndex;
             size--;
             return first;
         } else {
@@ -94,9 +102,17 @@ public class ArrayDeque<T> {
 
     public T removeLast() {
         if (size > 0) {
-            T last = array[nextLast - 1];
+            // prob: if nextLast = 0
+            int lastIndex;
+            if (nextLast == 0) {
+                lastIndex = array.length - 1;
+            } else {
+                lastIndex = nextLast - 1;
+            }
+            T last = array[lastIndex]; // will the last change after array[lastIndex] = null? or is it a copy?
+            array[lastIndex] = null;
+            nextLast = lastIndex;
             size--;
-            nextLast --;
             return last;
         } else {
             return null;
@@ -104,6 +120,14 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        return array[nextFirst + index + 1];
+        if (index < size) {
+            if (nextFirst + index + 1 <= array.length - 1) {
+                return array[nextFirst + index + 1];
+            } else {
+                return array[nextFirst + index + 1 - (array.length)];
+            }
+        } else {
+            return null;
+        }
     }
 }

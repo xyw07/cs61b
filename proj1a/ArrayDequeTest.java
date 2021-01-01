@@ -41,9 +41,18 @@ public class ArrayDequeTest {
         ArrayDeque.addLast(11);
     }
 
+    public static void test() {
+        ArrayDeque<Integer> ArrayDeque = new ArrayDeque<>();
+        boolean a = ArrayDeque.isEmpty();
+        System.out.println(a);
+        ArrayDeque.addFirst(1);
+        int b = ArrayDeque.removeFirst();
+        System.out.println(b);
+    }
     public static void main(String[] args) {
 //        addFirstTest();
 //        addFirstEmptyTest();
-        addLastremoveTest();
+//        addLastremoveTest();
+        test();
     }
 }
