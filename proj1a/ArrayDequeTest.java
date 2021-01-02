@@ -43,11 +43,30 @@ public class ArrayDequeTest {
 
     public static void test() {
         ArrayDeque<Integer> ArrayDeque = new ArrayDeque<>();
-        boolean a = ArrayDeque.isEmpty();
+        ArrayDeque.addLast(0);
+        ArrayDeque.addLast(1);
+        ArrayDeque.addLast(2);
+        ArrayDeque.addLast(3);
+        ArrayDeque.addFirst(4);
+        ArrayDeque.addFirst(5);
+        ArrayDeque.addLast(6);
+        ArrayDeque.addFirst(7);
+        ArrayDeque.removeLast(); //      ==> 6
+        ArrayDeque.removeLast(); //      ==> 3
+        ArrayDeque.get(4); //      ==> 1
+        ArrayDeque.get(1); //      ==> 5
+        ArrayDeque.removeLast();//      ==> 2
+        ArrayDeque.addFirst(13);
+        ArrayDeque.get(3); //     ==> 4
+        ArrayDeque.removeLast(); //      ==> 1
+        ArrayDeque.get(4); //      ==> 0
+        ArrayDeque.addFirst(17);
+        ArrayDeque.get(4); //      ==> 4
+        ArrayDeque.addLast(19);
+        ArrayDeque.addLast(20);
+        ArrayDeque.addFirst(21);
+        int a = ArrayDeque.get(3);
         System.out.println(a);
-        ArrayDeque.addFirst(1);
-        int b = ArrayDeque.removeFirst();
-        System.out.println(b);
     }
     public static void main(String[] args) {
 //        addFirstTest();
