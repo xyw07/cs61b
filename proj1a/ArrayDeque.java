@@ -82,8 +82,29 @@ public class ArrayDeque<T> {
 
     public void printDeque() {
         // prob: if nextFirst = length -1
-        for (int i = nextFirst + 1; i < nextLast; i++) {
-            System.out.print(array[i] + " ");
+        int last;
+        if (nextLast == 0) {
+            last = array.length - 1;
+        } else {
+            last = nextLast - 1;
+        }
+        int first;
+        if (nextFirst == array.length - 1) {
+            first = 0;
+        } else {
+            first = nextFirst + 1;
+        }
+        if (first <= last) {
+            for (int i = nextFirst + 1; i < nextLast; i++) {
+                System.out.print(array[i] + " ");
+            }
+        } else {
+            for (int i = first; i <= array.length - 1; i ++) {
+                System.out.print(array[i] + " ");
+            }
+            for (int i = 0; i <= last; i++) {
+                System.out.print(array[i] + " ");
+            }
         }
     }
 
